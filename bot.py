@@ -346,5 +346,8 @@ def handle_cb(call):
         bot.edit_message_text(f"❌ Rejected", call.message.chat.id, call.message.message_id)
 
 if __name__ == '__main__':
+    # Flask ko background mein chalayein
     keep_alive()
-    bot.infinity_polling()
+    print("Starting Telegram Bot...")
+    # Bot ko start karein
+    bot.infinity_polling(timeout=10, long_polling_timeout=5)
